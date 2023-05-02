@@ -1,0 +1,16 @@
+{
+    "name": "Agava.VKGames.Samples.Playtesting",
+    "rootNamespace": "",
+    "references": [
+        "GUID:14a6068dfcbb64cdab9347b37d081ff1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,16 @@
+{
+  "name": "com.agava.vkgames",
+  "version": "1.1.1",
+  "displayName": "VK Games",
+  "type": "library",
+  "unity": "2020.3",
+  "description": "VK Games Unity SDK for the WebGL platform.",
+  "license": "MIT",
+  "samples": [
+    {
+      "displayName": "Playtesting Sample",
+      "description": "Contains sample for uploading to Yandex Games and manually testing the SDK.",
+      "path": "Samples~/Playtesting"
+    }
+  ]
+}
