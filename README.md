@@ -1,5 +1,5 @@
 # com.agava.vkgames
-[Try the SDK demo here.](https://vk.com/app8228208)  
+[Try the SDK demo here.](https://vk.com/app51632637)  
   
 Make sure you have standalone [Git](https://git-scm.com/downloads) installed first.  
 In Unity, open "Window" -> "Package Manager".  
