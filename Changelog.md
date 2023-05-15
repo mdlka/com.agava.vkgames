@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2] - 15.05.2023
+
+### Fixed
+- Now `vkBridge` is not loaded in `vkWebAppInit` if it was loaded in index.html
+
+
+
 ## [1.1.1] - 23.10.2022
 
 ### Fixed

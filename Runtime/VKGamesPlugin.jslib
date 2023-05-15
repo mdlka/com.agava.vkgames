@@ -9,12 +9,8 @@ const library = {
             if (vkSDK.isInitialized) {
                 return;
             }
-                
-            const sdkScript = document.createElement('script');
-            sdkScript.src = 'https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js';
-            document.head.appendChild(sdkScript);
 
-            sdkScript.onload = function () {
+            function setupVkBridge() {
                 function invokeSuccess() {
                     vkSDK.isInitialized = true;
                     vkSDK.bridge = window['vkBridge'];
@@ -51,6 +47,17 @@ const library = {
                         });
                 }
             }
+
+            if (window['vkBridge'] == null) {
+                const sdkScript = document.createElement('script');
+                sdkScript.src = 'https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js';
+                document.head.appendChild(sdkScript);
+
+                sdkScript.onload = setupVkBridge;
+                return;
+            }
+
+            setupVkBridge();
         },
 
         throwIfSdkNotInitialized: function () {

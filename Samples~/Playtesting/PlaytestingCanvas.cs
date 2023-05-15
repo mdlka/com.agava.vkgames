@@ -18,10 +18,10 @@ namespace Agava.VKGames.Samples
 
         private IEnumerator InitializeSDK()
         {
-            yield return VKGamesSdk.Initialize(onSuccessCallback: OnSDKInitilized);
+            yield return VKGamesSdk.Initialize(onSuccessCallback: OnSDKInitialized);
         }
 
-        private void OnSDKInitilized()
+        private void OnSDKInitialized()
         {
             Debug.Log(VKGamesSdk.Initialized);
         }
