@@ -1,6 +1,6 @@
 {
     "name": "Agava.VKGames.Samples.Playtesting",
-    "rootNamespace": "",
+    "rootNamespace": "Agava.VKGames.Samples.Playtesting",
     "references": [
         "GUID:14a6068dfcbb64cdab9347b37d081ff1"
     ],

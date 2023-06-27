@@ -1,3 +1,14 @@
 {
-	"name": "Agava.VKGames"
+    "name": "Agava.VKGames",
+    "rootNamespace": "Agava.VKGames",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

@@ -1,58 +1,40 @@
 using UnityEngine;
-using Agava.VKGames;
-using UnityEngine.UI;
 using System.Collections;
 
-namespace Agava.VKGames.Samples
+namespace Agava.VKGames.Samples.Playtesting
 {
     public class PlaytestingCanvas : MonoBehaviour
     {
-        [SerializeField] private Text _coinsAmountText;
-
-        private int _coinsAmount = 0;
-
-        public void InitializeSdkButton()
+        private IEnumerator Start()
         {
-            StartCoroutine(InitializeSDK());
+#if !UNITY_WEBGL || UNITY_EDITOR
+            yield break;
+#endif
+
+            yield return VKGamesSdk.Initialize(onSuccessCallback: () => Debug.Log($"Initialized: {VKGamesSdk.Initialized}"));
         }
 
-        private IEnumerator InitializeSDK()
+        public void ShowInterstitialButtonClick()
         {
-            yield return VKGamesSdk.Initialize(onSuccessCallback: OnSDKInitialized);
+            Interstitial.Show(onOpenCallback: () => Debug.Log("Interstitial showed"));
         }
 
-        private void OnSDKInitialized()
+        public void ShowRewardedAdsButtonClick()
         {
-            Debug.Log(VKGamesSdk.Initialized);
+            VideoAd.Show(onRewardedCallback: () => Debug.Log("RewardedAd showed"));
         }
 
-        public void ShowInterstitialButton()
+        public void InviteFriendsButtonClick()
         {
-            Interstitial.Show();
+            SocialInteraction.InviteFriends(onRewardedCallback: () => Debug.Log("Friends invited"));
         }
 
-        public void ShowRewardedAdsButton()
+        public void InviteToCommunityButtonClick()
         {
-            VideoAd.Show(onRewardedCallback: OnRewardedCallback);
+            Community.InviteToIJuniorGroup(onRewardedCallback: () => Debug.Log("Added to community"));
         }
 
-        public void InviteFriendsButton()
-        {
-            SocialInteraction.InviteFriends(OnRewardedCallback);
-        }
-
-        public void AddPlayerToCommunity()
-        {
-            Community.InviteToIJuniorGroup(OnRewardedCallback);
-        }
-
-        private void OnRewardedCallback()
-        {
-            _coinsAmount += 40;
-            _coinsAmountText.text = $"{_coinsAmount} coins";
-        }
-
-        public void ShowLeaderboardButton()
+        public void ShowLeaderboardButtonClick()
         {
             Leaderboard.ShowLeaderboard(100);
         }

@@ -124,7 +124,21 @@ const library = {
                     console.log(error);
                 });
         },
-
+        
+        vkWebAppShowOrderBox: function (itemId, onPaySuccessCallback, onErrorCallback) {
+            vkSDK.bridge.send('VKWebAppShowOrderBox', { 
+                    type: 'item', 
+                    item: UTF8ToString(itemId)
+                })
+                .then((data) => {
+                    if (data.success) {
+                        dynCall('v', onPaySuccessCallback);
+                }})
+                .catch((error) => {
+                    dynCall('v', onErrorCallback);
+                    console.log(error);
+                });
+        },
     },
 
     // C# calls
@@ -162,6 +176,12 @@ const library = {
         vkSDK.throwIfSdkNotInitialized();
         
         vkSDK.vkWebJoinGroup(onSuccessCallback, onErrorCallback);
+    },
+
+    ShowOrderBox: function (itemId, onPaySuccessCallback, onErrorCallback) {
+        vkSDK.throwIfSdkNotInitialized();
+
+        vkSDK.vkWebAppShowOrderBox(itemId, onPaySuccessCallback, onErrorCallback);
     },
 
     IsInitialized: function () {
