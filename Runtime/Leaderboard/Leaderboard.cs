@@ -6,9 +6,6 @@ namespace Agava.VKGames
 {
     public static class Leaderboard
     {
-        [DllImport("__Internal")]
-        private static extern void ShowLeaderboardBox(int playerScore, Action onErrorCallback);
-
         private static Action s_onErrorCallback;
 
         public static void ShowLeaderboard(int playerScore = 0, Action onErrorCallback = null)
@@ -17,6 +14,9 @@ namespace Agava.VKGames
 
             ShowLeaderboardBox(playerScore, OnErrorCallback);
         }
+        
+        [DllImport("__Internal")]
+        private static extern void ShowLeaderboardBox(int playerScore, Action errorCallback);
 
         [MonoPInvokeCallback(typeof(Action))]
         private static void OnErrorCallback()
@@ -24,5 +24,4 @@ namespace Agava.VKGames
             s_onErrorCallback?.Invoke();
         }
     }
-
 }

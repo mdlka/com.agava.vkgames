@@ -4,7 +4,6 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-
 namespace VKGames.Tests
 {
     public class LeaderboardTests : MonoBehaviour

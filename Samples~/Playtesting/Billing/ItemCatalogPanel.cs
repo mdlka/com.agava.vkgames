@@ -34,7 +34,7 @@ namespace Agava.VKGames.Samples.Playtesting
         
         private void OnItemButtonClicked(ItemPanel itemPanel)
         {
-            Billing.PurchaseItem(itemPanel.Item.item_id, onPaySuccessCallback: () =>
+            Billing.PurchaseItem(itemPanel.Item.item_id, onSuccessCallback: () =>
             {
                 _purchasedItemListPanel.Add(itemPanel.Item);
                 Debug.Log($"Purchased {itemPanel.Item.item_id}");

@@ -6,9 +6,6 @@ namespace Agava.VKGames
 {
     public static class VideoAd
     {
-        [DllImport("__Internal")]
-        private static extern void ShowRewardedAds(Action onRewardedCallback, Action onErrorCallback);
-
         private static Action s_onRewardedCallback;
         private static Action s_onErrorCallback;
 
@@ -19,7 +16,9 @@ namespace Agava.VKGames
 
             ShowRewardedAds(OnRewardedCallback, OnErrorCallback);
         }
-
+        
+        [DllImport("__Internal")]
+        private static extern void ShowRewardedAds(Action rewardedCallback, Action errorCallback);
 
         [MonoPInvokeCallback(typeof(Action))]
         private static void OnRewardedCallback()

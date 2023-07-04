@@ -20,7 +20,7 @@ namespace VKGames.Tests
         {
             bool callbackInvoked = false;
 
-            Community.InviteToIJuniorGroup(onErrorCallback: () =>
+            Community.InviteToGroup(onErrorCallback: () =>
             {
                 callbackInvoked = true;
             });

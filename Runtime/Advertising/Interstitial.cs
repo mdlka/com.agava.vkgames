@@ -6,9 +6,6 @@ namespace Agava.VKGames
 {
     public static class Interstitial
     {
-        [DllImport("__Internal")]
-        private static extern void ShowInterstitialAds(Action onOpenCallback, Action onErrorCallback);
-
         private static Action s_onOpenCallback;
         private static Action s_onErrorCallback;
 
@@ -19,6 +16,9 @@ namespace Agava.VKGames
 
             ShowInterstitialAds(OnSuccessCallback, OnErrorCallback);
         }
+        
+        [DllImport("__Internal")]
+        private static extern void ShowInterstitialAds(Action openCallback, Action errorCallback);
 
         [MonoPInvokeCallback(typeof(Action))]
         private static void OnSuccessCallback()
@@ -31,6 +31,5 @@ namespace Agava.VKGames
         {
             s_onErrorCallback?.Invoke();
         }
-
     }
 }
