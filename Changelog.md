@@ -1,5 +1,10 @@
 # Changelog  
   
+## [2.0.1] - 05.07.2023  
+  
+### Fixed  
+- Now json string formatting in sample doesn't remove spaces.  
+  
 ## [2.0.0] - 04.07.2023  
   
 ### Added  
@@ -7,7 +12,7 @@
 - `groupId` param to `Community.InviteToGroup`.  
   
 ### Changed  
-- `Community.InviteToIJuniorGroup` are renamed to `Community.InviteToGroup`.  
+- `Community.InviteToIJuniorGroup` is renamed to `Community.InviteToGroup`.  
 - Renamed some params.  
   
 ## [1.2.0] - 27.06.2023  

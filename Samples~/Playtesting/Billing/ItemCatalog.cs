@@ -14,7 +14,7 @@ namespace Agava.VKGames.Samples.Playtesting
         [ContextMenu("Convert To Json")]
         private void CreateJsonFile()
         {
-            Debug.Log(JsonConvert.SerializeObject(_items));
+            Debug.Log(JsonConvert.SerializeObject(_items, Formatting.Indented));
         }
     }
 }
